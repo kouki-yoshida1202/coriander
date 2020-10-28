@@ -4,7 +4,7 @@ class MainModel extends ChangeNotifier {
   String kboyText = "KBOY";
 
   void changeKboyText() {
-    kboyText = "kboyさんかっこいい";
+    kboyText = "kboyさんいい";
     notifyListeners();
   }
 }

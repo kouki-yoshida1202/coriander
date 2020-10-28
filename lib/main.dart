@@ -1,4 +1,6 @@
+import 'package:coriander/book_list_page.dart';
 import 'package:coriander/main_model.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -9,6 +11,7 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    Firebase.initializeApp();
     return MaterialApp(
       title: "Flutter Demo",
       home: ChangeNotifierProvider<MainModel>(
@@ -22,11 +25,19 @@ class MyApp extends StatelessWidget {
               return Center(
                 child: Column(
                   children: [
-                    Text(model.kboyText),
+                    Text(
+                      model.kboyText,
+                      style: TextStyle(fontSize: 30),
+                    ),
                     RaisedButton(
                       child: Text("ボタン"),
                       onPressed: () {
-                        model.changeKboyText();
+                        // model.changeKboyText();
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => UserInformationList()),
+                        );
                       },
                     ),
                   ],
