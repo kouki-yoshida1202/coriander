@@ -1,5 +1,5 @@
-import 'package:coriander/book_list_page.dart';
-import 'package:coriander/main_model.dart';
+import 'package:coriander/presentation/book_list/book_list_page.dart';
+import 'package:coriander/presentation/main/main_model.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -32,7 +32,6 @@ class MyApp extends StatelessWidget {
                     RaisedButton(
                       child: Text("ボタン"),
                       onPressed: () {
-                        // model.changeKboyText();
                         Navigator.push(
                           context,
                           MaterialPageRoute(
